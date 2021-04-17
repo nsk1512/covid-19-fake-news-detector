@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>CoviFacts</title>
+   <link href="" rel="icon">
+
+   
+  <!-- Favicon -->
+  <link href="../static/img/toi.cms" rel="icon">
+
+  <!-- Bootstrap CSS File -->
+  <link href="{{ url_for('static', filename='lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='lib/font-awesome/css/font-awesome.min.css') }} " rel="stylesheet">
+  <link href="{{ url_for('static', filename='lib/animate/animate.min.css ') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='lib/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">  
+</head>
+
+<body id="page">
+		<nav class="colorlib-nav"  style="padding-top: 1%;" role="navigation">
+			<div class="top-menu">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-2 text-center">
+							<div id="colorlib-logo"><a href="/">Covi<span style="color: red;">F</span>acts</a></div>
+						</div>
+						<div class="col-md-10 text-right menu-1">
+							<ul>
+								<li><a href="/" onMouseOver="this.style.color='#FFFFFF'" onMouseOut="this.style.color='#A9A9A9'">Home</a></li>
+								<li><a href="https://competitions.codalab.org/competitions/26655#participate-get-data"  onMouseOver="this.style.color='#FFFFFF'" onMouseOut="this.style.color='#A9A9A9'">Dataset</a></li>
+								<li><a href="https://colab.research.google.com/drive/1hd3T2rEXUhC6FpVsaFxz-7Pc6UuOezHy#scrollTo=icenn8JNn3Mq"  onMouseOver="this.style.color='#FFFFFF'" onMouseOut="this.style.color='#A9A9A9'">NoteBook</a></li>
+                <li><a href="#service"  onMouseOver="this.style.color='#FFFFFF'" onMouseOut="this.style.color='#A9A9A9'">Detect</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+  <div id="home" class="intro route bg-image" style="background-image: url(../static/img/nan.png)">
+    <div class="overlay-itro"></div>
+    <div class="intro-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h1 class="intro-title mb-4" style="color:antiquewhite; text-align: left;"><span style="color: rgb(187, 185, 185)">CO</span><span style="color: rgb(192, 30, 30);">VID-<span style="color: rgb(187, 185, 185)">19</span></span></h1>
+          <p class="intro-subtitle" style="text-align: left;"><span class="text-slider-items">Fake News Detector., Fighting The 'Infodemic'.</span><strong class="text-slider"></strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <section id="about" class="about-mf sect-pt4 route">
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+          <div class="box-shadow-full">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-sm-6 col-md-5">
+                    <div class="about-img">
+                      <img src="../static/img/cap.PNG" class="img-fluid rounded b" alt="">
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-5">
+                    <div class="about-img">
+                    <img src="../static/img/fake.jpg" class="img-fluid rounded b" style="height: 170px; width: 200px; padding-top: 50px;" alt="">
+                  </div>
+                  </div>
+                </div>
+                
+                <div class="skill-mf">
+                  <p class="title-s">INDIA</p>
+                  <span>COVID CASES</span> <span class="pull-right">10.9M</span>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+                  <span>RECOVERED</span> <span class="pull-right">10.6M</span>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+                  <span>DEATHS</span> <span class="pull-right">156K</span>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="50" aria-valuemin="0"
+                      aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="about-me pt-4 pt-md-0">
+                  <div class="title-box-2">
+                    <h5 class="title-left">About Us</h5>
+                  </div>
+                  <p class="lead">
+                    Along with the COVID-19 pandemic we are also fighting an `infodemic'. Fake news and rumors are rampant on social media . Such misinformation has caused confusion
+                    among people, disruptions in society, and even deadly consequences in health problems.
+                  </p>
+                  <p class="lead">
+                    To help researchers combat COVID-19 health misinformation, we present <strong><u>CoviFacts</u></strong>, the first ever web application to
+                    protect the social engagement of fake news among the people.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="service" class="services-mf route">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="title-box text-center">
+            <h3 class="title-a">
+              Check your news
+            </h3>
+            <div class="line-mf"></div>
+          </div>
+        </div>
+      </div>
+
+      <section id="about" class="about-mf sect-pt4 route" style="background-color: #0078ff;">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="box-shadow-full">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="title-box-2">
+                        <h5 class="title-left">
+                        Fake News Detection
+                        </h5>
+                      </div>
+                      <div>
+                        <form action="{{ url_for('predict')}}" method="post">
+                          <div class="row">
+                           <div class="col-md-12 mb-3">
+                             <div class="form-group">
+                               <textarea class="form-control" name="message" rows="10"  placeholder="Enter the news as text or url" required="required"></textarea>
+                               <a href="#" style="font-size: medium; font-family: 'Times New Roman', Times, serif;"><strong><br>{{message}}</strong></a>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                             <button type="submit" class="button button-a button-big button-rouded">Check News</button>
+                           </div>
+                           <div class="col-md-6">
+                            <button type="submit" class="button button-a button-big button-rouded">Show Description</button>
+                          </div>
+                         </div>
+                       </form>
+    
+                     </div>
+                   </div>
+                   </div>
+                   <div class="col-md-6">
+                    <div class="row">
+                      <div class="title-box-2">
+                        <h5 class="title-left">
+                        News Description</h5>
+                        <br>
+                        <br>
+                        <div class="col-md-3">
+                               
+                              <p>
+                              <a href="#" class="btn btn-primary" style="padding-left: 10%; font-size: x-large;"><strong>PREDICTION : {{prediction_text}}</strong></a>
+                              <br>
+                              <br>
+                              <a href="#" class="btn btn-danger" style="padding-left: 10%; font-size: large;"><strong>VALIDITY : {{text}}</strong></a>
+                              </p>
+                              <br>
+                          </div>
+                          
+                      </div>
+                      <div>
+                    </div>
+                </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+  <script src="static/lib/jquery/jquery.min.js"></script>
+  <script src="static/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="static/lib/popper/popper.min.js"></script>
+  <script src="static/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="static/lib/counterup/jquery.counterup.js"></script>
+  <script src="static/lib/typed/typed.min.js"></script>
+  <script src="static/js/main.js"></script>
+
+</body>
+</html>
