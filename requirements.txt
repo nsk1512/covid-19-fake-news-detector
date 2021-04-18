@@ -4,4 +4,4 @@ sklearn
 pandas
 flask
 nltk
-newspaper
+newspaper3k
