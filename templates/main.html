@@ -73,7 +73,7 @@
                 </div>
                 
                 <div class="skill-mf">
-                  <p class="title-s">INDIA</p>
+                  <p class="title-s">WORLD DATA</p>
                   <span>COVID CASES</span> <span class="pull-right">{{data['confirmed']}}</span>
                   <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="{{percentConf}}" aria-valuemin="0"
@@ -145,15 +145,12 @@
                           <div class="row">
                            <div class="col-md-12 mb-3">
                              <div class="form-group">
-                               <textarea class="form-control" name="message" rows="10"  placeholder="Enter the news as text or url" required="required"></textarea>
+                               <textarea class="form-control" name="message" rows="10" style="width: 450px;" placeholder="Enter the news as text or url" required="required"></textarea>
                                <a href="#" style="font-size: medium; font-family: 'Times New Roman', Times, serif;"><strong><br>{{message}}</strong></a>
                               </div>
                            </div>
-                           <div class="col-md-6">
-                             <button type="submit" name='action' class="button button-a button-big button-rouded" value="check">Check News</button>
-                           </div>
-                           <div class="col-md-6">
-                            <button type="submit" name="action" class="button button-a button-big button-rouded" value="show">Show Description</button>
+                           <div class="col-md-10">
+                            <button type="submit" name="action" class="btn btn-primary btn-lg btn-block" value="show">Check my article</button>
                           </div>
                          </div>
                        </form>
@@ -168,29 +165,29 @@
                         News Description</h5>
                         <br>
                         <br>
-                        {% if prediction_text is defined %}
+                        {% if active is defined %}
                         <div class="col-md-3">
 
                               <p>
-                      
+                                {% if prediction_text is defined %}
                               <a href="#" class="btn btn-primary" style="padding-left: 10%; font-size: x-large;"><strong>PREDICTION : {{prediction_text}}</strong></a>
-                              
+                                {% endif %}
                               {% if text is defined %}
                               <br>
                               <br>
-                              <a href="#" class="btn btn-danger" style="padding-left: 10%; font-size: large;"><strong>VALIDITY : {{text}}</strong></a>
+                              <a href="#" class="btn btn-danger" style="padding-left: 10%; font-size: large;"><strong>{{text}}</strong></a>
                               {% endif %}
                               {% if title is defined %}
                               <br>
                               <br>
-                              <a href="#" class="btn btn-primary" style="padding-left: 10%; font-size: large;"><strong>TITLE : {{title}}</strong></a>
+                              <a href="#" class="btn btn-outline-dark" style="padding-left: 10%; font-size: large;"><strong>Title: </strong>{{title}}</a>
                               {% endif %}
 
                               {% if author is defined %}
                               <br>
                               <br>
                               
-                              <a href="#" class="btn btn-primary" style="padding-left: 10%; font-size: large;"><strong>AUTHORS : {%for i in range(0, leno)%} {{author[i]}} {%endfor%} </strong></a>
+                              <a href="#" class="btn btn-outline-dark" style="padding-left: 10%; font-size: large;"><strong>Author : </strong>{%for i in range(0, leno)%} {{author[i]}} {%endfor%}</a>
                               
                               {% endif %}
 
@@ -198,16 +195,15 @@
                               <br>
                               <br>
      
-                              <a href="#" class="btn btn-primary" style="padding-left: 10%; font-size: large;"><strong>KEYWORDS : {%for i in range(0, 4)%} {{keywords[i]}} {%endfor%} </strong></a>
-       
+                              <a href="#" class="btn btn-outline-dark" style="padding-left: 10%; font-size: large;"><strong>Keywords : </strong>{%for i in range(0, 5)%} {{keywords[i]}} {%endfor%}</a>
                               {% endif %}
                               </p>
                               <br>
 
                           </div>
                           {% else %}
-                          <div class="title-box-2">
-                          <h3 class="title" style="padding-left: 20px;">Please input your query !!</h3>
+                          <div class="title-box-2" style="padding-left: 0%;">
+                          <a href="#" class="btn btn-primary" style="padding-left: 6%; font-size: large;"><strong>Please Input your Query.</strong></a>
                           </div>
                           {% endif %}   
                       </div>
