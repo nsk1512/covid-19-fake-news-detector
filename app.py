@@ -8,9 +8,9 @@ import newspaper
 from newspaper import Article
 import urllib
 import nltk
-import COVID19Py
-covid19 = COVID19Py.COVID19()
-data = covid19.getLatest()
+#import COVID19Py
+#covid19 = COVID19Py.COVID19()
+#data = covid19.getLatest()
 
 
 #Loading Flask and assigning the model variable
@@ -24,16 +24,14 @@ with open('logistic.pickle', 'rb') as handle:
 
 @app.route('/')
 def main():
-    percentConf=(data['confirmed']/(data['confirmed']+data['recovered']+data['deaths']))*100
-    print(percentConf)
-    return render_template('main.html', data=data,percentConf=percentConf)
+    return render_template('main.html')
 
 #Receiving the input text from the user
 @app.route('/',methods=['GET','POST'])
 def predict():
     
     if(request.form.get('action')=='show'):
-        keywords= ['coronavirus','covid','covid19','virus','vaccine','sarscov2','COVID','COVID19','COVID-19','SARS-CoV-2','quarantine','lockdown','viruses','coronaviruses','pandemic','Covid']
+        keywords= ['coronavirus','covid','covid19','virus','vaccine','sarscov2','COVID','COVID19','COVID-19','SARS-CoV-2','quarantine','lockdown','viruses','coronaviruses','pandemic','Covid','curfew','Curfew']
         url = request.form['message']
         url = urllib.parse.unquote(url)
         try:
@@ -55,24 +53,25 @@ def predict():
                     print(summary)
         # Predicting the input
                     pred = model.predict([summary])
-                    return render_template('main.html', prediction_text='This article is {}.'.format(pred[0]), title=a,author=c,leno=len(c), active=1, keywords=b, lenk=len(keywords),data=data)
+                    return render_template('main.html', prediction_text='This article is {}.'.format(pred[0]), title=a,author=c,leno=len(c), active=1, keywords=b, lenk=len(keywords))
                 else:
                     print("news unrelated")
-                    return render_template('main.html', message='This article is unrelated to Covid 19. No results obtained.', active=1, data=data)
+                    return render_template('main.html', message='This article is unrelated to Covid 19. No results obtained.', active=1)
+
             elif(len(url) > 25):
                 print(url)
                 if any(x in url for x in keywords):
                     pred = model.predict([url])
-                    return render_template('main.html', prediction_text='This news is {}.'.format(pred[0]), title=a,author=c,leno=len(c), active=1, keywords=b, lenk=len(keywords),data=data)
+                    return render_template('main.html', prediction_text='This news is {}.'.format(pred[0]), active=1)
                 else:
-                    return render_template('main.html', message='This article is unrelated to Covid 19. No results obtained.', active=1, data=data)
+                    return render_template('main.html', message='This article is unrelated to Covid 19. No results obtained.', active=1)
 
             else:
-                return render_template('main.html', message='Data is insufficient. Min. length is 25 characters.', active=1, data=data)
+                return render_template('main.html', message='Data is insufficient. Min. length is 25 characters.', active=1)
 
         except:
             print("Invalid")
-            return render_template('main.html', text='Invalid Url. Please enter an existing URL.', active=1, data=data)
+            return render_template('main.html', text='Invalid Url. Please enter an existing URL.', active=1)
 
 
 
