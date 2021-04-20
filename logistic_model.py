@@ -32,5 +32,5 @@ print(classification_report(y_test, pred))
 print(confusion_matrix(y_test, pred))
 
 #Serialising the file
-with open('logistic.pickle', 'wb') as handle:
-    pickle.dump(pipeline, handle, protocol=pickle.HIGHEST_PROTOCOL)
+#with open('model.pickle', 'wb') as handle:
+    #pickle.dump(pipeline, handle, protocol=pickle.HIGHEST_PROTOCOL)

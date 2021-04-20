@@ -19,7 +19,7 @@ CORS(app)
 app=flask.Flask(__name__,template_folder='templates')
 
 # Loading the model
-with open('logistic.pickle', 'rb') as handle:
+with open('model.pickle', 'rb') as handle:
 	model = pickle.load(handle)
 
 @app.route('/')
@@ -27,12 +27,11 @@ def main():
     return render_template('main.html')
 
 #Receiving the input text from the user
-@app.route('/',methods=['GET','POST'])
+@app.route('/predict',methods=['GET','POST'])
 def predict():
-    
-    if(request.form.get('action')=='show'):
+    if request.method == 'POST':
         keywords= ['coronavirus','covid','covid19','virus','vaccine','sarscov2','COVID','COVID19','COVID-19','SARS-CoV-2','quarantine','lockdown','viruses','coronaviruses','pandemic','Covid','curfew','Curfew']
-        url = request.form['message']
+        url = request.get_data(as_text=True)[8:]
         url = urllib.parse.unquote(url)
         try:
             if(url.startswith('http://') or url.startswith('https://')):
@@ -43,7 +42,16 @@ def predict():
                 nltk.download('punkt')
                 article.nlp()
                 a = article.title
-                print(a)
+                title=""
+                count=0
+                for i in a:
+                    if(i.isspace()):
+                        count=count+1
+                    if count==4:
+                        break
+                    else:
+                        title+=i
+                print(title)
                 b = article.keywords
                 print(b)
                 c = article.authors
@@ -51,28 +59,28 @@ def predict():
                 summary=article.summary
                 if any(x in summary for x in keywords):
                     print(summary)
-        # Predicting the input
+                    # Predicting the input
                     pred = model.predict([summary])
-                    return render_template('main.html', prediction_text='This article is {}.'.format(pred[0]), title=a,author=c,leno=len(c), active=1, keywords=b, lenk=len(keywords))
+                    return render_template('pred.html', prediction_text='This article is {}.'.format(pred[0]), title=title,author=c,leno=len(c), active=1, keywords=b, lenk=len(keywords))
                 else:
                     print("news unrelated")
-                    return render_template('main.html', message='This article is unrelated to Covid 19. No results obtained.', active=1)
+                    return render_template('pred.html', message='This article is unrelated to Covid 19. No results obtained.', active=1)
 
             elif(len(url) > 25):
                 print(url)
                 if any(x in url for x in keywords):
                     pred = model.predict([url])
-                    return render_template('main.html', prediction_text='This news is {}.'.format(pred[0]), active=1)
+                    return render_template('pred.html', prediction_text='This news is {}.'.format(pred[0]), active=1)
                 else:
-                    return render_template('main.html', message='This article is unrelated to Covid 19. No results obtained.', active=1)
+                    return render_template('pred.html', message='This article is unrelated to Covid 19. No results obtained.', active=1)
 
             else:
-                return render_template('main.html', message='Data is insufficient. Min. length is 25 characters.', active=1)
+                return render_template('pred.html', message='Data is insufficient. Min. length is 25 characters.', active=1)
 
         except:
             print("Invalid")
-            return render_template('main.html', text='Invalid Url. Please enter an existing URL.', active=1)
-
+            return render_template('pred.html', text='Invalid Url. Please enter an existing URL.', active=1)
+    return render_template('pred.html')
 
 
     

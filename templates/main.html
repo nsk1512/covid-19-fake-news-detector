@@ -32,7 +32,7 @@
 								<li><a href="/" onMouseOver="this.style.color='#FFFFFF'" onMouseOut="this.style.color='#A9A9A9'">Home</a></li>
 								<li><a href="https://competitions.codalab.org/competitions/26655#participate-get-data"  onMouseOver="this.style.color='#FFFFFF'" onMouseOut="this.style.color='#A9A9A9'">Dataset</a></li>
 								<li><a href="https://colab.research.google.com/drive/1hd3T2rEXUhC6FpVsaFxz-7Pc6UuOezHy#scrollTo=icenn8JNn3Mq"  onMouseOver="this.style.color='#FFFFFF'" onMouseOut="this.style.color='#A9A9A9'">NoteBook</a></li>
-                <li><a href="#service"  onMouseOver="this.style.color='#FFFFFF'" onMouseOut="this.style.color='#A9A9A9'">Detect</a></li>
+                <li><a href="{{ url_for('predict') }}"  onMouseOver="this.style.color='#FFFFFF'" onMouseOut="this.style.color='#A9A9A9'">Detect</a></li>
 							</ul>
 						</div>
 					</div>
@@ -114,107 +114,14 @@
   </section>
 
 
-  <section id="service" class="services-mf route">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="title-box text-center">
-            <h3 class="title-a">
-              Check your news
-            </h3>
-            <div class="line-mf"></div>
-          </div>
-        </div>
-      </div>
-
-      <section id="about" class="about-mf sect-pt4 route" style="background-color: #0078ff;">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="box-shadow-full">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="row">
-                      <div class="title-box-2">
-                        <h5 class="title-left">
-                        Fake News Detection
-                        </h5>
-                      </div>
-                      <div>
-                        <form action="{{ url_for('predict')}}" method="post" id='news'>
-                          <div class="row">
-                           <div class="col-md-12 mb-3">
-                             <div class="form-group">
-                               <textarea class="form-control" name="message" rows="10" style="width: 450px;" placeholder="Enter the news as text or url" required="required"></textarea>
-                               <a href="#" style="font-size: medium; font-family: 'Times New Roman', Times, serif;"><strong><br>{{message}}</strong></a>
-                              </div>
-                           </div>
-                           <div class="col-md-10">
-                            <button type="submit" name="action" class="btn btn-primary btn-lg btn-block" value="show">Check my article</button>
-                          </div>
-                         </div>
-                       </form>
-    
-                     </div>
-                   </div>
-                   </div>
-                   <div class="col-md-6">
-                    <div class="row">
-                      <div class="title-box-2">
-                        <h5 class="title-left">
-                        News Description</h5>
-                        <br>
-                        <br>
-                        {% if active is defined %}
-                        <div class="col-md-3">
-
-                              <p>
-                                {% if prediction_text is defined %}
-                              <a href="#" class="btn btn-primary" style="padding-left: 10%; font-size: x-large;"><strong>PREDICTION : {{prediction_text}}</strong></a>
-                                {% endif %}
-                              {% if text is defined %}
-                              <br>
-                              <br>
-                              <a href="#" class="btn btn-danger" style="padding-left: 10%; font-size: large;"><strong>{{text}}</strong></a>
-                              {% endif %}
-                              {% if title is defined %}
-                              <br>
-                              <br>
-                              <a href="#" class="btn btn-outline-dark" style="padding-left: 10%; font-size: large;"><strong>Title: </strong>{{title}}</a>
-                              {% endif %}
-
-                              {% if author is defined %}
-                              <br>
-                              <br>
-                              
-                              <a href="#" class="btn btn-outline-dark" style="padding-left: 10%; font-size: large;"><strong>Author : </strong>{%for i in range(0, leno)%} {{author[i]}} {%endfor%}</a>
-                              
-                              {% endif %}
-
-                              {% if keywords is defined %}
-                              <br>
-                              <br>
-     
-                              <a href="#" class="btn btn-outline-dark" style="padding-left: 10%; font-size: large;"><strong>Keywords : </strong>{%for i in range(0, 5)%} {{keywords[i]}} {%endfor%}</a>
-                              {% endif %}
-                              </p>
-                              <br>
-
-                          </div>
-                          {% else %}
-                          <div class="title-box-2" style="padding-left: 0%;">
-                          <a href="#" class="btn btn-primary" style="padding-left: 6%; font-size: large;"><strong>Please Input your Query.</strong></a>
-                          </div>
-                          {% endif %}   
-                      </div>
-                      <div>
-                    </div>
-                </div>
-                </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <!-- Footer -->
+  
+    <footer id="footer">
+  
+      <p style="text-align: center;">© Copyright 2020 CoronaVirus</p>
+  
+    </footer>
+  
 
   <script src="static/lib/jquery/jquery.min.js"></script>
   <script src="static/lib/jquery/jquery-migrate.min.js"></script>
