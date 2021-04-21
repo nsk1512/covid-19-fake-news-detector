@@ -10,6 +10,33 @@ h5,
 h6 {
   color: #1e1e1e;
 }
+#features
+{
+    padding: 7% 15%;
+}
+.fa-heart{
+  color: #ef8172;
+  padding-bottom: 10px;
+}
+.fa-bullseye
+{  color: #ef8172;
+  padding-bottom: 10px;
+
+}
+.fa-check-circle{
+  color: #ef8172;
+  padding-bottom: 10px;
+}
+.fa-heart:hover{
+  color:red;
+}
+.fa-check-circle:hover{
+  color: black;
+}
+.fa-bullseye:hover{
+  color: blueviolet;
+}
+
 
 #page {
   position: relative;
