@@ -47,7 +47,7 @@ def predict():
                 for i in a:
                     if(i.isspace()):
                         count=count+1
-                    if count==4:
+                    if count==5:
                         break
                     else:
                         title+=i
