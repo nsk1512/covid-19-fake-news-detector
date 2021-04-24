@@ -394,7 +394,7 @@ a:hover {
 .line-mf {
   width: 40px;
   height: 5px;
-  background-color: #0078ff;
+  background-color: #28527a;
   margin: 0 auto;
 }
 .title-box-2 {
@@ -408,7 +408,7 @@ a:hover {
   content: '';
   position: absolute;
   height: 3px;
-  background-color: #0078ff;
+  background-color: #28527a;
   width: 100px;
   bottom: -12px;
 }
@@ -697,7 +697,7 @@ a:hover {
 }
 .skill-mf .progress .progress-bar {
   height: .7rem;
-  background-color: #0078ff;
+  background-color: #28527a;
 }
 .service-box {
   background-color: #fff;
