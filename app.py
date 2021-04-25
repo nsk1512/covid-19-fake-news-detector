@@ -30,7 +30,7 @@ def main():
 @app.route('/predict',methods=['GET','POST'])
 def predict():
     if request.method == 'POST':
-        keywords= ['coronavirus','covid','covid19','virus','vaccine','sarscov2','COVID','COVID19','COVID-19','SARS-CoV-2','quarantine','lockdown','viruses','coronaviruses','pandemic','Covid','curfew','Curfew']
+        keywords= ['coronavirus','covid','covid19','virus','vaccine','sarscov2','COVID','COVID19','COVID-19','SARS-CoV-2','quarantine','lockdown','viruses','coronaviruses','pandemic','Covid','curfew','Curfew','oxygen','Oxygen', 'remdesivir']
         url = request.get_data(as_text=True)[8:]
         url = urllib.parse.unquote(url)
         try:
@@ -47,7 +47,7 @@ def predict():
                 for i in a:
                     if(i.isspace()):
                         count=count+1
-                    if count==10:
+                    if count==9:
                         break
                     else:
                         title+=i
