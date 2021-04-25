@@ -39,7 +39,7 @@ def predict():
                 article=Article(str(url),language="en")
                 article.download()
                 article.parse()
-                nltk.download('punkt')
+                #nltk.download('punkt')
                 article.nlp()
                 a = article.title
                 title=""
@@ -47,7 +47,7 @@ def predict():
                 for i in a:
                     if(i.isspace()):
                         count=count+1
-                    if count==5:
+                    if count==10:
                         break
                     else:
                         title+=i
@@ -61,7 +61,7 @@ def predict():
                     print(summary)
                     # Predicting the input
                     pred = model.predict([summary])
-                    return render_template('pred.html', prediction_text='This article is {}.'.format(pred[0]), title=title,author=c,leno=len(c), active=1, keywords=b, lenk=len(keywords))
+                    return render_template('pred.html', prediction_text='This article is {}.'.format(pred[0]), title=title,author=c,leno=len(c),active=1, keywords=b, lenk=len(keywords))
                 else:
                     print("news unrelated")
                     return render_template('pred.html', message='This article is unrelated to Covid 19. No results obtained.', active=1)

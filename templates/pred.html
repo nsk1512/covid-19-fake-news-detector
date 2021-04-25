@@ -94,24 +94,24 @@
 
                           <p>
                             {% if prediction_text is defined %}
-                          <a href="#" class="btn btn-primary" style="padding-left: 10%; font-size: x-large;"><strong>PREDICTION : {{prediction_text}}</strong></a>
+                          <a href="#" class="btn btn" style="padding-left: 10%; font-size: x-large; background-color: #28527a; color: white;"><strong>PREDICTION : {{prediction_text}}</strong></a>
                             {% endif %}
                           {% if text is defined %}
                           <br>
                           <br>
-                          <a href="#" class="btn btn-danger" style="padding-left: 10%; font-size: large;"><strong>{{text}}</strong></a>
+                          <a href="#" class="btn btn-danger" style=" font-size: large;"><strong>{{text}}</strong></a>
                           {% endif %}
                           {% if title is defined %}
                           <br>
                           <br>
-                          <a href="#" class="btn btn-outline-dark" style="padding-left: 10%; font-size: large;"><strong>Title: </strong>{{title}}</a>
+                          <a href="#" class="btn btn-outline-dark" style=" font-size: medium;"><strong>Title: </strong>{{title}}</a>
                           {% endif %}
 
                           {% if author is defined %}
                           <br>
                           <br>
                           
-                          <a href="#" class="btn btn-outline-dark" style="padding-left: 10%; font-size: large;"><strong>Author : </strong>{%for i in range(0, leno)%} {{author[i]}} {%endfor%}</a>
+                          <a href="#" class="btn btn-outline-dark" style=" font-size: medium;"><strong>Author : </strong>{%for i in range(0, leno)%} {{author[i]}} {%endfor%}</a>
                           
                           {% endif %}
 
@@ -119,7 +119,7 @@
                           <br>
                           <br>
  
-                          <a href="#" class="btn btn-outline-dark" style="padding-left: 10%; font-size: large;"><strong>Keywords : </strong>{%for i in range(0, 5)%} {{keywords[i]}} {%endfor%}</a>
+                          <a href="#" class="btn btn-outline-dark" style="padding-left: 10%; font-size: medium;"><strong>Keywords : </strong>{%for i in range(0, 7)%} {{keywords[i]}} {%endfor%}</a>
                           {% endif %}
                           </p>
                           <br>
