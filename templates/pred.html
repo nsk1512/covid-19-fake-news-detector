@@ -90,11 +90,11 @@
                     <br>
                     <br>
                     {% if active is defined %}
-                    <div class="col-md-3">
+                    <div class="col-md-12">
 
                           <p>
                             {% if prediction_text is defined %}
-                          <a href="#" class="btn btn" style="padding-left: 10%; font-size: x-large; background-color: #28527a; color: white;"><strong>PREDICTION : {{prediction_text}}</strong></a>
+                          <a href="#" class="btn btn" style="font-size: x-large; background-color: #28527a; color: white;"><strong>PREDICTION : {{prediction_text}}</strong></a>
                             {% endif %}
                           {% if text is defined %}
                           <br>
@@ -119,7 +119,15 @@
                           <br>
                           <br>
  
-                          <a href="#" class="btn btn-outline-dark" style="padding-left: 10%; font-size: medium;"><strong>Keywords : </strong>{%for i in range(0, 7)%} {{keywords[i]}} {%endfor%}</a>
+                          <a href="#" class="btn btn-outline-dark" style="font-size: medium;"><strong>Keywords : </strong>{%for i in range(0, 7)%} {{keywords[i]}} {%endfor%}</a>
+                          {% endif %}
+
+                          {% if summary is defined %}
+                          <br>
+                          <br>
+                          
+                          <a href="#"  style=" font-size: medium;"><strong>Summary : </strong>{{summary}}</a>
+                          
                           {% endif %}
                           </p>
                           <br>

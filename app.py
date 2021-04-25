@@ -61,7 +61,7 @@ def predict():
                     print(summary)
                     # Predicting the input
                     pred = model.predict([summary])
-                    return render_template('pred.html', prediction_text='This article is {}.'.format(pred[0]), title=title,author=c,leno=len(c),active=1, keywords=b, lenk=len(keywords))
+                    return render_template('pred.html', prediction_text='This article is {}.'.format(pred[0]), title=title,author=c,leno=len(c),active=1, keywords=b,summary=summary, lenk=len(keywords))
                 else:
                     print("news unrelated")
                     return render_template('pred.html', message='This article is unrelated to Covid 19. No results obtained.', active=1)
