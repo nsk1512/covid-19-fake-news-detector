@@ -30,7 +30,7 @@ def main():
 @app.route('/predict',methods=['GET','POST'])
 def predict():
     if request.method == 'POST':
-        keywords= ['coronavirus','covid','covid19','virus','vaccine','sarscov2','COVID','COVID19','COVID-19','SARS-CoV-2','quarantine','lockdown','viruses','coronaviruses','pandemic','Covid','curfew','Curfew','oxygen','Oxygen', 'remdesivir']
+        keywords= ['coronavirus','covid','covid19','virus','vaccine','sarscov2','COVID','COVID19','COVID-19','SARS-CoV-2','quarantine','lockdown','viruses','coronaviruses','pandemic','Covid','curfew','Curfew','oxygen','Oxygen', 'remdesivir','ventilator','deaths','covaxin','covishield']
         url = request.get_data(as_text=True)[8:]
         url = urllib.parse.unquote(url)
         try:
@@ -57,7 +57,7 @@ def predict():
                 c = article.authors
                 print(c)
                 summary=article.summary
-                if any(x in summary for x in keywords):
+                if any(x in b for x in keywords):
                     print(summary)
                     # Predicting the input
                     pred = model.predict([summary])
