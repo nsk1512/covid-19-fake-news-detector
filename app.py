@@ -30,7 +30,10 @@ def main():
 @app.route('/predict',methods=['GET','POST'])
 def predict():
     if request.method == 'POST':
-        keywords= ['coronavirus','covid','covid19','virus','vaccine','sarscov2','COVID','COVID19','COVID-19','SARS-CoV-2','quarantine','lockdown','viruses','coronaviruses','pandemic','Covid','curfew','Curfew','oxygen','Oxygen', 'remdesivir','ventilator','deaths','covaxin','covishield']
+        keywords= ['coronavirus','covid','covid19','virus','vaccine','sarscov2','COVID','COVID19','COVID-19',
+        'SARS-CoV-2','quarantine','lockdown','viruses','coronaviruses','pandemic','Covid',
+        'curfew','Curfew','oxygen','Oxygen', 'remdesivir','ventilator','deaths','covaxin',
+        'covishield','mutant','mutation']
         url = request.get_data(as_text=True)[8:]
         url = urllib.parse.unquote(url)
         try:
