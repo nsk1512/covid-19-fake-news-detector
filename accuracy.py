@@ -6,6 +6,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.linear_model import LogisticRegression
+from sklearn.svm import LinearSVC
 from sklearn.feature_extraction.text import TfidfVectorizer
 import pickle
 
@@ -18,8 +19,12 @@ y = news['label']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
 #Creating a pipeline that first creates bag of words(after applying stopwords) & then applies Multinomial Naive Bayes model
+#pipeline = Pipeline([('tfidf', TfidfVectorizer(stop_words='english')),
+                     #('model', LogisticRegression())])
+
+
 pipeline = Pipeline([('tfidf', TfidfVectorizer(stop_words='english')),
-                     ('model', LogisticRegression())])
+                    ('clf', LinearSVC())])
 
 #Training our data
 pipeline.fit(X_train, y_train)
