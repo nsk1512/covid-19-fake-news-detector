@@ -27,12 +27,16 @@ Research paper Link ( To be published in Springer LNNS Journal )
   
 ## 3. Detection Page
   
-  ![detect](./images/detect.png)
-  ![text](./images/text.png)
-  ![url](./images/url.png)
+   ![detect](./images/detect.png)
 
-  ##4. Comparision of ML Classifiers
-  ![ML](./images/ML.png)
+## 4. Data Prediction
+  <br>
+   ![text](./images/text.PNG)
+  <br>
+   ![url](./images/url.PNG)
+
+## 4. Comparision of ML Classifiers
+   ![ML](./images/ML.PNG)
   
 <!-- CONTACT -->
 ## Contact the developers
