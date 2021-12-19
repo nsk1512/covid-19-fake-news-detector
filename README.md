@@ -14,6 +14,26 @@ eventually amount to defective information, defamatory allegations, and hoaxes. 
 Research paper Link ( To be published in Springer LNNS Journal )
 * [CoviFacts - A Covid-19 Fake News Detector Using NLP](https://ictcs.in/agenda.php)
   
+##Block Diagram
+  ![block](./images/block.png)
+  
+## 1. HomePage
+  
+   ![home](./images/home.png)
+  
+## 2. About Us
+  
+   ![about](./images/about.png)
+  
+## 3. Detection Page
+  
+  ![detect](./images/detect.png)
+  ![text](./images/text.png)
+  ![url](./images/url.png)
+
+  ##4. Comparision of ML Classifiers
+  ![ML](./images/ML.png)
+  
 <!-- CONTACT -->
 ## Contact the developers
 Nandita - nandita.kadam@somaiya.edu
