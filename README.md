@@ -10,4 +10,7 @@ eventually amount to defective information, defamatory allegations, and hoaxes. 
 * [Python](https://www.python.org/)
 * [NLP](https://towardsdatascience.com/introduction-to-natural-language-processing-for-text-df845750fb63)
 * [Machine Learning](https://scikit-learn.org/stable/)
+ 
+Research paper Link ( To be published in Springer LNNS Journal )
+* [CoviFacts - A Covid-19 Fake News Detector Using NLP](https://ictcs.in/agenda.php)
 
