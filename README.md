@@ -41,6 +41,7 @@ Research paper Link ( To be published in Springer LNNS Journal )
 ## Contact the developers
 Nandita - nandita.kadam@somaiya.edu
 Shreyas  - shreyas.mm@somaiya.edu
+Krisha - krisha.pamchamia@somaiya.edu
 
 
 
